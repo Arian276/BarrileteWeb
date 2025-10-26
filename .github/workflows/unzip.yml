@@ -6,25 +6,31 @@ on:
     branches:
       - main
 
+permissions:
+  contents: write  # <== Esto le da permiso al bot para hacer commit y push
+
 jobs:
   unzip:
     runs-on: ubuntu-latest
 
     steps:
-      # 1. Clona el repo
+      # 1. Clonar el repo con permisos de escritura
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      # 2. Descomprime el ZIP en la raíz
+      # 2. Descomprimir ZIP en la raíz
       - name: Unzip to root
         run: |
           unzip -o Streammmmm.zip -d ./
+          rm -f Streammmmm.zip  # opcional, elimina el ZIP
 
-      # 3. Muestra archivos extraídos
+      # 3. Verificar contenido
       - name: List files
         run: ls -R .
 
-      # 4. Configura Git para hacer commit
+      # 4. Commit y push
       - name: Commit changes
         run: |
           git config user.name "github-actions[bot]"
