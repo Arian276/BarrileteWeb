@@ -1,0 +1,746 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* LIGHT MODE */
+:root {
+  --button-outline: rgba(0,0,0, .10);
+  --badge-outline: rgba(0,0,0, .05);
+
+  /* Automatic computation of border around primary / danger buttons */
+  --opaque-button-border-intensity: -8; /* In terms of percentages */
+
+  /* Backgrounds applied on top of other backgrounds when hovered/active */
+  --elevate-1: rgba(0,0,0, .03);
+  --elevate-2: rgba(0,0,0, .08);
+
+  --background: 210 25% 8%;
+
+  --foreground: 0 0% 98%;
+
+  --border: 0 0% 88%;
+
+  --card: 200 8% 18%;
+
+  --card-foreground: 0 0% 98%;
+
+  --card-border: 0 0% 92%;
+
+  --sidebar: 0 0% 96%;
+
+  --sidebar-foreground: 0 0% 15%;
+
+  --sidebar-border: 0 0% 90%;
+
+  --sidebar-primary: 195 85% 65%;
+
+  --sidebar-primary-foreground: 0 0% 98%;
+
+  --sidebar-accent: 210 15% 88%;
+
+  --sidebar-accent-foreground: 210 15% 25%;
+
+  --sidebar-ring: 195 85% 65%;
+
+  --popover: 0 0% 95%;
+
+  --popover-foreground: 0 0% 15%;
+
+  --popover-border: 0 0% 85%;
+
+  --primary: 195 85% 65%;
+
+  --primary-foreground: 0 0% 98%;
+
+  --secondary: 220 100% 70%;
+
+  --secondary-foreground: 0 0% 98%;
+
+  --muted: 210 8% 92%;
+
+  --muted-foreground: 200 8% 72%;
+
+  --accent: 25 95% 58%;
+
+  --accent-foreground: 0 0% 98%;
+
+  --destructive: 0 85% 60%;
+
+  --destructive-foreground: 0 0% 98%;
+
+  --input: 0 0% 75%;
+  --ring: 195 85% 65%;
+  --chart-1: 195 85% 65%;
+  --chart-2: 210 100% 45%;
+  --chart-3: 280 65% 45%;
+  --chart-4: 45 85% 45%;
+  --chart-5: 160 70% 35%;
+
+  /* Argentine Football Colors for Effects */
+  --argentina-celeste: 195 85% 65%;
+  --argentina-orange: 25 95% 58%;
+  --argentina-energy: 320 75% 65%;
+  --argentina-gold: 45 85% 45%;
+  --argentina-passion: 0 85% 60%;
+
+  --font-sans: Inter, sans-serif;
+  --font-serif: Georgia, serif;
+  --font-mono: Menlo, monospace;
+  --radius: .5rem; /* 8px */
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+
+  /* Automatically computed borders - intensity can be controlled by the user by the --opaque-button-border-intensity setting */
+
+  /* Fallback for older browsers */
+  --sidebar-primary-border: hsl(var(--sidebar-primary));
+  --sidebar-primary-border: hsl(from hsl(var(--sidebar-primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --sidebar-accent-border: hsl(var(--sidebar-accent));
+  --sidebar-accent-border: hsl(from hsl(var(--sidebar-accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --primary-border: hsl(var(--primary));
+  --primary-border: hsl(from hsl(var(--primary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --secondary-border: hsl(var(--secondary));
+  --secondary-border: hsl(from hsl(var(--secondary)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --muted-border: hsl(var(--muted));
+  --muted-border: hsl(from hsl(var(--muted)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --accent-border: hsl(var(--accent));
+  --accent-border: hsl(from hsl(var(--accent)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+
+  /* Fallback for older browsers */
+  --destructive-border: hsl(var(--destructive));
+  --destructive-border: hsl(from hsl(var(--destructive)) h s calc(l + var(--opaque-button-border-intensity)) / alpha);
+}
+
+.dark {
+  --button-outline: rgba(255,255,255, .10);
+  --badge-outline: rgba(255,255,255, .05);
+
+  --opaque-button-border-intensity: 9;  /* In terms of percentages */
+
+  /* Backgrounds applied on top of other backgrounds when hovered/active */
+  --elevate-1: rgba(255,255,255, .04);
+  --elevate-2: rgba(255,255,255, .09);
+
+  --background: 12 8% 8%;
+
+  --foreground: 0 0% 95%;
+
+  --border: 12 6% 18%;
+
+  --card: 12 6% 12%;
+
+  --card-foreground: 0 0% 95%;
+
+  --card-border: 12 6% 20%;
+
+  --sidebar: 12 4% 10%;
+
+  --sidebar-foreground: 0 0% 95%;
+
+  --sidebar-border: 12 4% 16%;
+
+  --sidebar-primary: 195 85% 65%;
+
+  --sidebar-primary-foreground: 0 0% 95%;
+
+  --sidebar-accent: 12 4% 16%;
+
+  --sidebar-accent-foreground: 0 0% 85%;
+
+  --sidebar-ring: 195 85% 65%;
+
+  --popover: 12 6% 14%;
+
+  --popover-foreground: 0 0% 95%;
+
+  --popover-border: 12 6% 22%;
+
+  --primary: 195 85% 65%;
+
+  --primary-foreground: 0 0% 95%;
+
+  --secondary: 12 4% 18%;
+
+  --secondary-foreground: 0 0% 85%;
+
+  --muted: 12 4% 14%;
+
+  --muted-foreground: 12 4% 65%;
+
+  --accent: 12 4% 16%;
+
+  --accent-foreground: 0 0% 85%;
+
+  --destructive: 0 85% 60%;
+
+  --destructive-foreground: 0 0% 95%;
+
+  --input: 12 6% 25%;
+  --ring: 195 85% 65%;
+  --chart-1: 195 85% 75%;
+  --chart-2: 210 100% 70%;
+  --chart-3: 280 65% 70%;
+  --chart-4: 45 85% 65%;
+  --chart-5: 160 70% 60%;
+
+  --shadow-2xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 1px 2px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 2px 4px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 4px 6px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00), 0px 8px 10px -1px hsl(202.8169 89.1213% 53.1373% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(202.8169 89.1213% 53.1373% / 0.00);
+
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+
+@layer utilities {
+
+  /* Hide ugly search cancel button in Chrome until we can style it properly */
+  input[type="search"]::-webkit-search-cancel-button {
+    @apply hidden;
+  }
+
+  /* Placeholder styling for contentEditable div */
+  [contenteditable][data-placeholder]:empty::before {
+    content: attr(data-placeholder);
+    color: hsl(var(--muted-foreground));
+    pointer-events: none;
+  }
+
+  /* .no-default-hover-elevate/no-default-active-elevate is an escape hatch so consumers of
+   * buttons/badges can remove the automatic brightness adjustment on interactions
+   * and program their own. */
+  .no-default-hover-elevate {}
+
+  .no-default-active-elevate {}
+
+  /* Soccer ball animation styles */
+  .soccer-ball {
+    transition: all 0.3s ease;
+    transform-origin: center;
+  }
+
+  .animate-spin-slow {
+    animation: spin-slow 4s linear infinite;
+  }
+
+  @keyframes spin-slow {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+
+  .group:hover .soccer-ball {
+    transform: scale(1.1);
+    filter: brightness(1.1);
+  }
+
+  /**
+   * Toggleable backgrounds go behind the content. Hoverable/active goes on top.
+   * This way they can stack/compound. Both will overlap the parent's borders!
+   * So borders will be automatically adjusted both on toggle, and hover/active,
+   * and they will be compounded.
+   */
+  .toggle-elevate::before,
+  .toggle-elevate-2::before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: -1;
+    /* sits behind content but above backdrop */
+  }
+
+  .toggle-elevate.toggle-elevated::before {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.toggle-elevate::before {
+    inset: -1px;
+  }
+
+  /* Does not work on elements with overflow:hidden! */
+  .hover-elevate:not(.no-default-hover-elevate),
+  .active-elevate:not(.no-default-active-elevate),
+  .hover-elevate-2:not(.no-default-hover-elevate),
+  .active-elevate-2:not(.no-default-active-elevate) {
+    position: relative;
+    z-index: 0;
+  }
+
+  .hover-elevate:not(.no-default-hover-elevate)::after,
+  .active-elevate:not(.no-default-active-elevate)::after,
+  .hover-elevate-2:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:not(.no-default-active-elevate)::after {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    inset: 0px;
+    /*border-radius: inherit;   match rounded corners */
+    border-radius: inherit;
+    z-index: 999;
+    /* sits in front of content */
+  }
+
+  .hover-elevate:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-1);
+  }
+
+  .hover-elevate-2:hover:not(.no-default-hover-elevate)::after,
+  .active-elevate-2:active:not(.no-default-active-elevate)::after {
+    background-color: var(--elevate-2);
+  }
+
+  /* If there's a 1px border, adjust the inset so that it covers that parent's border */
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate-2:not(.no-hover-interaction-elevate)::after,
+  .border.active-elevate-2:not(.no-active-interaction-elevate)::after,
+  .border.hover-elevate:not(.no-hover-interaction-elevate)::after {
+    inset: -1px;
+  }
+
+  /* Animación de llenado para el texto Barrilete Cósmico */
+  @keyframes brand-fill {
+    0% { 
+      clip-path: inset(0 100% 0 0);
+    }
+    50% { 
+      clip-path: inset(0 0 0 0);
+    }
+    100% { 
+      clip-path: inset(0 100% 0 0);
+    }
+  }
+
+  .brand-fill-animation {
+    clip-path: inset(0 100% 0 0);
+  }
+
+  /* ========== EFECTOS ARGENTINOS LLAMATIVOS ========== */
+
+  /* Animaciones de Pulso para EN VIVO */
+  @keyframes pulse-live {
+    0% {
+      box-shadow: 0 0 0 0 hsl(var(--argentina-passion) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px hsl(var(--argentina-passion) / 0.1);
+    }
+    100% {
+      box-shadow: 0 0 0 0 hsl(var(--argentina-passion) / 0);
+    }
+  }
+
+  .pulse-live {
+    animation: pulse-live 2s infinite;
+  }
+
+  /* Gradiente Argentino Dinámico */
+  @keyframes gradient-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .argentina-gradient {
+    background: linear-gradient(
+      45deg,
+      hsl(var(--argentina-celeste)),
+      hsl(var(--argentina-orange)),
+      hsl(var(--argentina-energy)),
+      hsl(var(--argentina-celeste))
+    );
+    background-size: 300% 300%;
+    animation: gradient-flow 6s ease infinite;
+  }
+
+  .argentina-gradient-border {
+    background: linear-gradient(
+      45deg,
+      hsl(var(--argentina-celeste) / 0.8),
+      hsl(var(--argentina-orange) / 0.8),
+      hsl(var(--argentina-energy) / 0.8),
+      hsl(var(--argentina-celeste) / 0.8)
+    );
+    background-size: 300% 300%;
+    animation: gradient-flow 8s ease infinite;
+  }
+
+  /* Efectos de Glow/Brillo */
+  .glow-celeste {
+    box-shadow: 0 0 20px hsl(var(--argentina-celeste) / 0.5);
+    transition: all 0.3s ease;
+  }
+
+  .glow-celeste:hover {
+    box-shadow: 0 0 30px hsl(var(--argentina-celeste) / 0.8);
+  }
+
+  .glow-orange {
+    box-shadow: 0 0 20px hsl(var(--argentina-orange) / 0.5);
+    transition: all 0.3s ease;
+  }
+
+  .glow-orange:hover {
+    box-shadow: 0 0 30px hsl(var(--argentina-orange) / 0.8);
+  }
+
+  /* Animaciones de Entrada para Tarjetas */
+  @keyframes slide-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fade-in-scale {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .animate-slide-in-up {
+    animation: slide-in-up 0.6s ease-out;
+  }
+
+  .animate-fade-in-scale {
+    animation: fade-in-scale 0.5s ease-out;
+  }
+
+  /* Retardo de Animación para Efecto Staggered */
+  .animate-delay-100 {
+    animation-delay: 0.1s;
+  }
+
+  .animate-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animate-delay-300 {
+    animation-delay: 0.3s;
+  }
+
+  .animate-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animate-delay-500 {
+    animation-delay: 0.5s;
+  }
+
+  /* Efectos de Hover para Tarjetas */
+  .card-hover-lift {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-origin: center;
+  }
+
+  .card-hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 
+      0 20px 25px -5px hsl(var(--argentina-celeste) / 0.1),
+      0 10px 10px -5px hsl(var(--argentina-celeste) / 0.04);
+  }
+
+  /* Animación de Contadores */
+  @keyframes bounce-number {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .animate-bounce-number {
+    animation: bounce-number 0.6s ease-out;
+  }
+
+  /* Efecto de Click/Tap para Botones */
+  .button-click-effect {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .button-click-effect::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+  }
+
+  .button-click-effect:active::before {
+    width: 300px;
+    height: 300px;
+  }
+
+  /* Shimmer Loading Effect */
+  @keyframes shimmer {
+    0% {
+      background-position: -468px 0;
+    }
+    100% {
+      background-position: 468px 0;
+    }
+  }
+
+  .shimmer {
+    animation: shimmer 1.2s ease-in-out infinite;
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.1) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+  }
+
+  /* Texto con Gradiente Animado */
+  .text-gradient-argentina {
+    background: linear-gradient(
+      45deg,
+      hsl(var(--argentina-celeste)),
+      hsl(var(--argentina-orange)),
+      hsl(var(--argentina-energy))
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-flow 4s ease infinite;
+  }
+
+  /* Indicador de Conexión Pulsante */
+  @keyframes pulse-connection {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.7;
+      transform: scale(1.1);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .pulse-connection {
+    animation: pulse-connection 2s ease-in-out infinite;
+  }
+
+  /* Efecto de Focus para Inputs */
+  .input-focus-glow:focus {
+    box-shadow: 
+      0 0 0 3px hsl(var(--argentina-celeste) / 0.2),
+      0 0 15px hsl(var(--argentina-celeste) / 0.3);
+  }
+
+  /* Animación de Logo Spinning Balón */
+  @keyframes ball-spin {
+    0% {
+      transform: rotate(0deg) scale(1);
+    }
+    25% {
+      transform: rotate(90deg) scale(1.1);
+    }
+    50% {
+      transform: rotate(180deg) scale(1);
+    }
+    75% {
+      transform: rotate(270deg) scale(1.1);
+    }
+    100% {
+      transform: rotate(360deg) scale(1);
+    }
+  }
+
+  .animate-ball-spin {
+    animation: ball-spin 3s ease-in-out infinite;
+  }
+
+  /* Efecto de Background Pattern */
+  .football-pattern {
+    background-image: 
+      radial-gradient(circle at 1px 1px, hsl(var(--argentina-celeste) / 0.15) 1px, transparent 0);
+    background-size: 20px 20px;
+  }
+
+  /* Estados de Hover Mejorados */
+  .enhanced-hover {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .enhanced-hover::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    transition: left 0.6s;
+  }
+
+  .enhanced-hover:hover::after {
+    left: 100%;
+  }
+
+  /* Animación para efecto ripple en botones */
+  @keyframes ripple-expand {
+    0% {
+      transform: scale(0);
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 0.3;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  /* Mejoras adicionales para interactividad */
+  .interactive-button {
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .interactive-button:active {
+    transform: scale(0.98) translate3d(0, 0, 0);
+  }
+
+  /* Animación para notificaciones/feedback */
+  @keyframes success-flash {
+    0% {
+      background-color: transparent;
+    }
+    50% {
+      background-color: hsl(var(--argentina-celeste) / 0.2);
+    }
+    100% {
+      background-color: transparent;
+    }
+  }
+
+  .success-flash {
+    animation: success-flash 0.4s ease-out;
+  }
+
+  /* Responsive Scaling */
+  @media (max-width: 768px) {
+    .card-hover-lift:hover {
+      transform: translateY(-4px) scale(1.01);
+    }
+
+    /* Reducir intensidad de efectos en móvil */
+    .glow-celeste:hover {
+      box-shadow: 0 0 15px hsl(var(--argentina-celeste) / 0.4);
+    }
+
+    .glow-orange:hover {
+      box-shadow: 0 0 15px hsl(var(--argentina-orange) / 0.4);
+    }
+  }
+}
+
+/* ===========================
+   FIX: Fullscreen video sizing
+   =========================== */
+
+/* Estilos estándar */
+:fullscreen video,
+video:fullscreen {
+  width: 100vw !important;
+  height: 100svh !important;   /* evita el bug de 100vh en mobile */
+  object-fit: contain !important;
+  background: #000;
+}
+
+/* Compatibilidad WebKit/iOS */
+:-webkit-full-screen video,
+video:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100svh !important;
+  object-fit: contain !important;
+  background: #000;
+}
+
+/* Si pedís fullscreen sobre un contenedor (recomendado) */
+:fullscreen .player-container,
+.player-container:fullscreen,
+:-webkit-full-screen .player-container,
+.player-container:-webkit-full-screen {
+  width: 100vw !important;
+  height: 100svh !important;
+  background: #000;
+  overflow: hidden;
+}
