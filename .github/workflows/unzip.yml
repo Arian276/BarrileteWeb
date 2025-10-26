@@ -23,7 +23,7 @@ jobs:
       # Cambiá myfile.zip por el nombre real del zip
       - name: Unzip file
         run: |
-          unzip myfile.zip -d extracted
+          unzip Streammmmm.zip -d extracted
 
       # 4. Listar contenido para debug
       - name: List extracted files
