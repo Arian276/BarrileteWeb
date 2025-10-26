@@ -1,0 +1,37 @@
+name: Unzip artifact
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  unzip:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout repo
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Crear carpeta de salida
+      - name: Create output dir
+        run: mkdir -p extracted
+
+      # 3. Descomprimir ZIP
+      # Cambiá myfile.zip por el nombre real del zip
+      - name: Unzip file
+        run: |
+          unzip myfile.zip -d extracted
+
+      # 4. Listar contenido para debug
+      - name: List extracted files
+        run: ls -R extracted
+
+      # 5. Publicar como artifact descargable
+      - name: Upload extracted artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: extracted-files
+          path: extracted
